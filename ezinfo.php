@@ -2,7 +2,7 @@
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 // SOFTWARE NAME: Netgen Comments
-// SOFTWARE RELEASE: 1.0 beta
+// SOFTWARE RELEASE: 1.0
 // COPYRIGHT NOTICE: Copyright (C) 2011 Netgen d.o.o.
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
@@ -27,7 +27,7 @@ class ngcommentsInfo
     static function info()
     {
         return array( 'Name'      => '<a href="http://projects.ez.no/ngcomments">Netgen Comments</a> extension',
-                      'Version'   => '1.0 beta',
+                      'Version'   => '1.0',
                       'Copyright' => 'Copyright (C) 2011 Netgen d.o.o.',
                       'License'   => 'GNU General Public License v2.0' );
     }
