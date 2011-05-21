@@ -16,6 +16,10 @@
         <translation>Nedostaje unos u nekim poljima!</translation>
     </message>
     <message>
+        <source>Pages</source>
+        <translation>Stranice</translation>
+    </message>
+    <message>
         <source>Total comment count</source>
         <translation>Ukupno komentara</translation>
     </message>

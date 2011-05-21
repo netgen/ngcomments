@@ -186,6 +186,34 @@
 			}
 		},
 
+		reloadComments = function(w, trigger, page) {
+			var comments_loader = $('#comment-container').find('.reload-comments-loader');
+			var comments_list = $('#comment-container').find('#ezcom-comment-list');
+
+			var object_attribute_id = w.find('[name="ObjectAttributeID"]');
+			if (object_attribute_id.length > 0 && object_attribute_id.val())
+				object_attribute_id = object_attribute_id.val();
+
+			var version = w.find('[name="Version"]');
+			if (version.length > 0 && version.val())
+				version = version.val();
+
+			if (object_attribute_id && version) {
+				comments_list.remove();
+				comments_loader.show();
+
+				$.ez('ezjscNgComments::commentList', {'attribute_id': object_attribute_id,
+						'version': version, 'page': page, 'is_reload': '1'}, function(data){
+					if(data.content.status == 'success')
+						jQuery('#comment-container').append(data.content.content).ngComments();
+					else
+						jQuery('#comment-container').append(data.content.message);
+
+					comments_loader.hide();
+				});
+			}
+		},
+
 		addOwnerMarkup = function(w, comment) {
 			var opt = w.data('ngComments');
 			if (comment.hasClass(opt.p.uoid)) {
@@ -253,6 +281,10 @@
 
 					w.find('[name="UpdateCommentButton"]').live('click', function() {
 						editCommentSubmit(w, $(this), opt.p.missing_input_message); return false;
+					});
+
+					w.find('.ezcom-paging-link').live('click', function() {
+						reloadComments(w, $(this), $(this).attr('rel')); return false;
 					});
 
 					w.find('#ezcom-comment-list .ezcom-view-comment').each(function() {

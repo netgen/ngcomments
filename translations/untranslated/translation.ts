@@ -16,6 +16,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Total comment count</source>
         <translation type="unfinished"></translation>
     </message>

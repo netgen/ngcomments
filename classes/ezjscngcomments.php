@@ -17,8 +17,13 @@ class ezjscNgComments extends ezjscServerFunctions
 
                 if ( $objectAttribute instanceof eZContentObjectAttribute )
                 {
+                    $page = (int) trim( $http->postVariable( 'page' ) );
+                    $isReload = (int) trim( $http->postVariable( 'is_reload' ) );
+
                     $tpl = eZTemplate::factory();
                     $tpl->setVariable( 'attribute', $objectAttribute );
+                    $tpl->setVariable( 'page', $page >= 0 ? $page : 0 );
+                    $tpl->setVariable( 'is_reload', $isReload > 0 ? true : false );
 
                     return array( 'status' => 'success',
                                   'content' => $tpl->fetch( 'design:comment/comment_list.tpl' ) );
