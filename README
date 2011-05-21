@@ -1,0 +1,12 @@
+License: See, LICENSE
+Installation: See, doc/INSTALL
+
+Netgen Comments is an eZ Publish extension that builds upon existing
+eZ Comments extension adding AJAX commenting capabilities.
+
+It supports all of the features that eZ Comments supports: adding, editing,
+deleting comments, recaptcha, turning off unneeded fields etc.
+
+Netgen Comments is technically built on top of eZ Comments, so it requires it.
+All the configuration is done in eZ Comments extension, Netgen Comments uses
+already available settings and honors them.
