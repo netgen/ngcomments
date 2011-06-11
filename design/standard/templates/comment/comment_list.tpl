@@ -104,6 +104,8 @@
                     <p>{'Total comment count'|i18n( 'ngcomments/comment' )}: <span class="ezcom-comment-count">{$total_count}</span></p>
                 </div>
             </div>
+        {else}
+        	<div id="ezcom-comment-list" class="ezcom-view-list"></div>
         {/if}
         {* Comment item END *}
 
