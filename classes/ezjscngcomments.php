@@ -65,7 +65,7 @@ class ezjscNgComments extends ezjscServerFunctions
 
                 $commentObject->setAttribute( 'contentobject_id', $contentObjectId );
                 $commentObject->setAttribute( 'language_id', eZContentLanguage::idByLocale( $languageCode ) );
-                $commentObject->setAttribute( 'session_key', $http->getSessionKey() );
+                $commentObject->setAttribute( 'session_key', $http->sessionID() );
                 $commentObject->setAttribute( 'ip', ezcomUtility::instance()->getUserIP() );
                 $commentObject->setAttribute( 'user_id', $currentUser->attribute( 'contentobject_id' ) );
                 $commentObject->setAttribute( 'created', $currentTime );
