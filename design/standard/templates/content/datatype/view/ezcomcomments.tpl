@@ -25,10 +25,14 @@
         jQuery.ez('ezjscNgComments::commentList', {'attribute_id': '{/literal}{$attribute.id}{literal}',
                 'version': '{/literal}{$attribute.version}{literal}', 'page': '0', 'is_reload': '0'}, function(data){
             jQuery('.initial-comments-loader').remove();
-            if(data.content.status == 'success')
-                jQuery('#comment-container').append(data.content.content).ngComments();
-            else
+            if(data.content.status == 'success') {
+                jQuery('#comment-container').append(data.content.content).ngComments({
+                    ajax_loader_path: "{/literal}{'images/ajax-loader-comments.gif'|ezdesign(no)}{literal}"
+                });
+            }
+            else {
                 jQuery('#comment-container').append(data.content.message);
+            }
         });
     });
 {/literal}

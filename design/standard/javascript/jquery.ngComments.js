@@ -1,6 +1,8 @@
 (function($) {
 	var ngComments = function(options) {
-		var defaults = {},
+		var defaults = {
+			ajax_loader_path: "/extension/ngcomments/design/standard/images/ajax-loader-comments.gif"
+		},
 
 		addComment = function(w, trigger) {
 			var P = w.data('ngComments').p;
@@ -257,33 +259,33 @@
 					opt.p.owner_controls = '<div class="ezcom-comment-tool float-break">' +
 						'<input type="button" class="button" name="DeleteCommentButton" value="' + opt.p.delete_button_text + '" />' +
 						'<input type="button" class="button" name="EditCommentButton" value="' + opt.p.edit_button_text + '" />' +
-						'<div class="comment-loader" style="display:none"><img src="/extension/ngcomments/design/standard/images/ajax-loader-comments.gif" alt="Loading ..." /></div>' +
+						'<div class="comment-loader" style="display:none"><img src="' + opt.ajax_loader_path + '" alt="Loading ..." /></div>' +
 					'</div>';
 
 					var P = opt.p;
 					w.data('ngComments', opt);
 
-					w.find('[name="AddCommentButton"]').live('click', function() {
+					$(document).on('click', '[name="AddCommentButton"]', function() {
 						addComment(w, $(this)); return false;
 					});
 
-					w.find('[name="DeleteCommentButton"]').live('click', function() {
+					$(document).on('click', '[name="DeleteCommentButton"]', function() {
 						deleteComment(w, $(this), opt.p.delete_comment_message); return false;
 					});
 
-					w.find('[name="EditCommentButton"]').live('click', function() {
+					$(document).on('click', '[name="EditCommentButton"]', function() {
 						editComment(w, $(this)); return false;
 					});
 
-					w.find('[name="CancelButton"]').live('click', function() {
+					$(document).on('click', '[name="CancelButton"]', function() {
 						editCommentCancel(w, $(this)); return false;
 					});
 
-					w.find('[name="UpdateCommentButton"]').live('click', function() {
+					$(document).on('click', '[name="UpdateCommentButton"]', function() {
 						editCommentSubmit(w, $(this), opt.p.missing_input_message); return false;
 					});
 
-					w.find('.ezcom-paging-link').live('click', function() {
+					$(document).on('click', '.ezcom-paging-link', function() {
 						reloadComments(w, $(this), $(this).attr('rel')); return false;
 					});
 
