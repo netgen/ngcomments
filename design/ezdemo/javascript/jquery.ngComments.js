@@ -201,17 +201,20 @@
                 version = version.val();
 
             if (object_attribute_id && version) {
-                comments_list.remove();
                 comments_loader.show();
 
                 $.ez('ezjscNgComments::commentList', {'attribute_id': object_attribute_id,
                         'version': version, 'page': page, 'is_reload': '1'}, function(data){
-                    if(data.content.status == 'success')
+                    comments_list.remove();
+
+                    if(data.content.status == 'success') {
                         jQuery('#comment-container').append(data.content.content).ngComments({
                             ajax_loader_path: w.data('ngComments').ajax_loader_path
                         });
-                    else
+                    }
+                    else {
                         jQuery('#comment-container').append(data.content.message);
+                    }
 
                     comments_loader.hide();
                 });
@@ -288,7 +291,7 @@
                         editCommentSubmit(w, $(this), opt.p.missing_input_message); return false;
                     });
 
-                    $(document).on('click', '.ezcom-paging-link', function() {
+                    $(document).one('click', '.ezcom-paging-link', function() {
                         reloadComments(w, $(this), $(this).attr('rel')); return false;
                     });
 
