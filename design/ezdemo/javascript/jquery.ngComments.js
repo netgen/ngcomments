@@ -207,7 +207,9 @@
                 $.ez('ezjscNgComments::commentList', {'attribute_id': object_attribute_id,
                         'version': version, 'page': page, 'is_reload': '1'}, function(data){
                     if(data.content.status == 'success')
-                        jQuery('#comment-container').append(data.content.content).ngComments();
+                        jQuery('#comment-container').append(data.content.content).ngComments({
+                            ajax_loader_path: w.data('ngComments').ajax_loader_path
+                        });
                     else
                         jQuery('#comment-container').append(data.content.message);
 
@@ -231,6 +233,7 @@
         return {
             init: function(opt) {
                 opt = $.extend({}, defaults, opt||{});
+
                 return this.each(function() {
                     var w = $(this);
 
