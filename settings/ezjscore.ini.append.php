@@ -5,6 +5,4 @@ FunctionList[]=ezjscNgComments
 
 [ezjscServer_ezjscNgComments]
 Class=ezjscNgComments
-TemplateFunction=false
-File=extension/ngcomments/classes/ezjscngcomments.php
 */ ?>
