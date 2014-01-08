@@ -1,4 +1,4 @@
-{ezscript_require( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'jquery.ngComments.js' ) )}
+{ezscript_require( array( 'jquery.ngComments.js' ) )}
 {def $current_user = fetch( user, current_user )}
 
 {include uri="design:comment/recaptcha.tpl"}
