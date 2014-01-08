@@ -1,3 +1,16 @@
 {
-    "name": "ngcomments"
+    "name": "netgen/ngcomments",
+    "description": "Netgen Comments is an eZ Publish extension that builds upon existing eZ Comments extension, adding AJAX commenting capabilities.",
+    "type": "ezpublish-legacy-extension",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Netgen",
+            "email": "info@netgen.hr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ezsystems/ezpublish-legacy-installer": "*"
+    }
 }
