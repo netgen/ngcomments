@@ -63,7 +63,7 @@
                     <input type="hidden" name="CommentEmail" />
                 {else}
                     <input type="text" maxlength="100" class="box" id="CommentEmail" name="CommentEmail" />
-                {/if} 
+                {/if}
             </div>
         {undef $emailRequired}
         {/if}
@@ -132,9 +132,9 @@ eZComments.cfg = {ldelim}
                     postcontainer: '#ezcom-comment-list',
                     sessionprefix: '{ezini('Session', 'SessionNamePrefix', 'site.ini')}',
                     sortorder: '{ezini('GlobalSettings', 'DefaultEmbededSortOrder', 'ezcomments.ini')}',
-                    fields: {ldelim} 
+                    fields: {ldelim}
                                 name: '#CommentName',
-                                email: '#CommentEmail' 
+                                email: '#CommentEmail'
                             {rdelim}
                  {rdelim};
 eZComments.init();

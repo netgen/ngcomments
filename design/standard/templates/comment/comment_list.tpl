@@ -105,7 +105,7 @@
                 </div>
             </div>
         {else}
-        	<div id="ezcom-comment-list" class="ezcom-view-list"></div>
+            <div id="ezcom-comment-list" class="ezcom-view-list"></div>
         {/if}
         {* Comment item END *}
 
