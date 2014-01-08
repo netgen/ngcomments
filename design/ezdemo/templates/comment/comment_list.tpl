@@ -78,6 +78,10 @@
                 </div>
                 <div class="action-message"></div>
             {/if}
+
+            {def $current_user = fetch( user, current_user )}
+            <input type="hidden" name="UserObjectID" value="uoid{$current_user.contentobject_id}" />
+
             <div id="ezcom-comment-list" class="ezcom-view-list">
                 {for 0 to $comments|count|sub( 1 ) as $index}
                         {include contentobject=$contentobject

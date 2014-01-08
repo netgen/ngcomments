@@ -1,10 +1,8 @@
 {ezscript_require( array( 'jquery.ngComments.js' ) )}
-{def $current_user = fetch( user, current_user )}
 
 {include uri="design:comment/recaptcha.tpl"}
 <a name="comments"></a>
 <div id="comment-container" class="comment-container">
-    <input type="hidden" name="UserObjectID" value="uoid{$current_user.contentobject_id}" />
     <input type="hidden" name="MissingInputMessage" value="{'Some fields are missing input!'|i18n( 'ngcomments/comment' )}" />
     <input type="hidden" name="DeleteCommentMessage" value="{'Delete comment?'|i18n( 'ezcomments/comment/delete' )}" />
     <input type="hidden" name="DeleteButtonText" value="{'Delete'|i18n( 'ezcomments/comment/view' )}" />
