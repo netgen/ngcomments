@@ -122,8 +122,6 @@
 </div>
 </form>
 
-{ezscript_require( array( 'ezjsc::yui3', 'ezjsc::yui3io', 'ezcomments.js' ) )}
-
 <script type="text/javascript">
 eZComments.cfg = {ldelim}
                     postbutton: '#ezcom-post-button',

@@ -1,4 +1,4 @@
-{ezscript_require( array( 'jquery.ngComments.js' ) )}
+{ezscript_require( array( 'ezjsc::yui3', 'ezjsc::yui3io', 'ezcomments.js', 'jquery.ngComments.js' ) )}
 
 {include uri="design:comment/recaptcha.tpl"}
 <a name="comments"></a>
