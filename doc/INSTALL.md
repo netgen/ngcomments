@@ -1,15 +1,16 @@
 Netgen Comments extension installation instructions
+===================================================
 
 Requirements
-============
+------------
 
-    * eZ Publish 4.3+
-    * eZ JSCore
-    * eZ Comments extension
+* eZ Publish 4.7+
+* eZ JSCore
+* eZ Comments extension
 
 
 Important info to know before using Netgen Comments
-===================================================
+---------------------------------------------------
 
 After activating Netgen Comments on freshly installed eZ Publish instance with
 eZ Comments enabled, all commenting capabilities will be automatically turned
@@ -25,25 +26,27 @@ but nevertheless they are not compatible with standard eZ Comments templates.
 
 
 Installation
-============
+------------
 
  1. Unpack/unzip
 
-    Unpack the downloaded package into the 'extension' directory of your eZ Publish installation.
+    Unpack the downloaded package into the `extension` directory of your eZ Publish installation.
 
  2. Activate extension
 
     Activate the extension by using the admin interface ( Setup -> Extensions ) or by
-    prepending ngcomments to ActiveExtensions[] in settings/override/site.ini.append.php:
+    prepending `ngcomments` to `ActiveExtensions[]` in `settings/override/site.ini.append.php`:
 
+    ````ini
     [ExtensionSettings]
     ActiveExtensions[]=ngcomments
+    ````
 
  3. Regenerate autoload array
 
     Run the following from your eZ Publish root folder
 
-    php bin/php/ezpgenerateautoloads.php --extension
+    `php bin/php/ezpgenerateautoloads.php --extension`
 
     Or go to Setup -> Extensions and click the "Regenerate autoload arrays" button
 
