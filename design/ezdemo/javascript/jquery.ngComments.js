@@ -1,7 +1,7 @@
 (function($) {
     var ngComments = function(options) {
         var defaults = {
-            ajax_loader_path: "/extension/ngcomments/design/standard/images/ajax-loader-comments.gif"
+            ajax_loader_path: "/extension/ngcomments/design/ezdemo/images/ajax-loader-comments.gif"
         },
 
         addComment = function(w, trigger) {
