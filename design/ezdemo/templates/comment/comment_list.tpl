@@ -67,6 +67,9 @@
         {* Find out if the currently used role has a user based edit/delete policy *}
         {def $self_policy=fetch( 'comment', 'self_policies', hash( 'contentobject', $contentobject, 'node', $attribute_node ) )}
 
+        {def $current_user = fetch( user, current_user )}
+        <input type="hidden" name="UserObjectID" value="uoid{$current_user.contentobject_id}" />
+
         {* Comment item START *}
         {if $comments|count|gt( 0 )}
             {if $is_reload|not}
@@ -78,9 +81,6 @@
                 </div>
                 <div class="action-message"></div>
             {/if}
-
-            {def $current_user = fetch( user, current_user )}
-            <input type="hidden" name="UserObjectID" value="uoid{$current_user.contentobject_id}" />
 
             <div id="ezcom-comment-list" class="ezcom-view-list">
                 {for 0 to $comments|count|sub( 1 ) as $index}
